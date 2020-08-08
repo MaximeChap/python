@@ -29,9 +29,12 @@ def index (request):
   # utilisation du template intEgrE
   return render (request, 'lycee/index.html', context)
 
-def detail(request, cursus_id):
-  resp = "result for cursus {}".format(cursus_id)
-  return HttpResponse(resp)
+def detail(request,cursus_id):
+    result_list = Student.objects.all().filter(cursus = cursus_id)
+    # context
+    result_cursus_list = get_object_or_404(Cursus, pk=cursus_id)
+    context = {'liste': result_list, 'liste_cursus' : result_cursus_list}
+    return render (request, 'lycee/detail_cursus.html' , context)
 
 def detail_student(request,student_id):
     #result_list = Student.objects.get(pk=student_id)
