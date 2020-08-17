@@ -11,6 +11,7 @@
     {% block content %}
       
       <table> 
+        
         {% for student in liste %}
         
           <tr>
@@ -20,14 +21,13 @@
                 <li><a href="/lycee/student/{{student.id}}">{{student.first_name }} {{student.last_name}}</a></li>
           
               </ul>
-              </td>
-            </tr>   
+            </td>
+          </tr>   
           
         {% endfor %}
+
       </table> 
       
-
-    
      {% endblock %}
 
 {% else %}
