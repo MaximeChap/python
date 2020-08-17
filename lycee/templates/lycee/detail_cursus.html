@@ -10,14 +10,22 @@
 
     {% block content %}
       
-      {% for student in liste %}
-
-          <ul>
-            <li><a href="/lycee/student/{{student.id}}">{{student.first_name }} {{student.last_name}}</a></li>
-          </ul>
-            
-            
+      <table> 
+        {% for student in liste %}
+        
+          <tr>
+            <td>
+              <ul>
+             
+                <li><a href="/lycee/student/{{student.id}}">{{student.first_name }} {{student.last_name}}</a></li>
+          
+              </ul>
+              </td>
+            </tr>   
+          
         {% endfor %}
+      </table> 
+      
 
     
      {% endblock %}
