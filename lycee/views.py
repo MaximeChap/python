@@ -43,6 +43,13 @@ def detail_student(request,student_id):
     context = {'liste': result_list,}
     return render (request, 'lycee/student/detail_student.html' , context)
 
+def callofroll_compta(request,cursus_id):
+    result_list = Student.objects.all().filter(cursus = cursus_id)
+    # context
+    result_cursus_list = get_object_or_404(Cursus, pk=cursus_id)
+    context = {'liste': result_list, 'liste_cursus' : result_cursus_list}
+    return render (request, 'lycee/detail_cursus.html' , context)
+
 class StudentCreateView(CreateView):
   # ref au modEle
   model = Student
