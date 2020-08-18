@@ -17,29 +17,32 @@
             <a href="/lycee/{{cursus.id }}">{{cursus.name}}</a> 
         </td>
         <td>
-          <button class="callofroll" type="button"><a href="/lycee//lycee/cursuscall/{{cursus.id }}';">Call of roll</a></button>
+          <button class="callofroll" type="button">
+            <a href="/lycee//lycee/cursuscall/{{cursus.id }}';">Call of roll</a>
+          </button>
             <!--
             <input class="callofroll" type="button" value="Call of roll" onclick="window.location='/lycee/cursuscall/{{cursus.id }}';"/>
             -->
-        </td>
           </div>
-        
+        </td>
       </tr> 
     {% endfor %}
-      </table>
-      <table>
-      <div class="boutons">
-        <tr>
-        
-        <input class="particularcallofroll" type="button" value="Particular Call of roll" onclick="window.location='/lycee/cursuscall/{{cursus.id }}';"/>
-          
-        </tr>
       <tr>
-        <button class="createastudent" type="button"><a href="/lycee/student/create">Create a student</a></button>
-        <!--<input class="createastudent" type="button" value="Create a student" onclick="window.location='/lycee/student/create';"/>-->
+        <td>
+          <div class="boutons">
+            <input class="particularcallofroll" type="button" value="Particular Call of roll" onclick="window.location='/lycee/cursuscall/{{cursus.id }}';"/>
+        </td>
       </tr>
-      </div>
-      </table>
+      <tr>
+        <td>
+          <button class="createastudent" type="button">
+            <a href="/lycee/student/create">Create a student</a>
+          </button>
+        <!--<input class="createastudent" type="button" value="Create a student" onclick="window.location='/lycee/student/create';"/>-->
+        </td>
+      </tr>
+          </div>
+    </table>
 
 
   
