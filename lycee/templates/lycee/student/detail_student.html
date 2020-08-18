@@ -7,6 +7,9 @@
     {% endblock %}
 
     {% block content %}
+    <table>
+      <tr>
+        <td>
             <h3>{{liste.first_name }} {{liste.last_name}}</h3>
             <ul>
                 <li>{{liste.birth_date}}</li>
@@ -14,7 +17,16 @@
                 <li>{{liste.email|lower}}</li>
                 <li>{{liste.cursus}}</li>
             </ul>
-            
+        </td> 
+      </tr>
+      <tr>
+        <td>
+            <button class="editstudent" type="button">
+            <a href="/lycee/';">Edit student data</a>
+            </button>
+        </td>
+      </tr>
+    </table>
     {% endblock %}
 {% else %}
      <p>No student to show.</p>

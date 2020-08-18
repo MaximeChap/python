@@ -29,8 +29,14 @@
     {% endfor %}
       <tr>
         <td>
-          <div class="boutons">
+
+          <button class="particularcallofroll" type="button">
+            <a href="/lycee/">Particular Call of roll</a>
+          </button>
+
+          <!--<div class="boutons">
             <input class="particularcallofroll" type="button" value="Particular Call of roll" onclick="window.location='/lycee/cursuscall/{{cursus.id }}';"/>
+            -->
         </td>
       </tr>
       <tr>
@@ -49,6 +55,5 @@
   {% endblock %}
 {% else %}
   <p> No cursus to show .</p>
-
 {% endif %}
 
