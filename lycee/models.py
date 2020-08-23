@@ -74,3 +74,23 @@ class Student(models.Model):
    )
   def __str__(self):
     return self.email
+
+class Presence(models.Model):
+  date_missing = models.DateField(
+    verbose_name='date of call',
+    blank=False,
+    null=False
+  )
+  isMissing = models.BooleanField(
+    default=False
+  )
+  reason = models.CharField(
+    max_lenght=100,
+    blank=False,
+    null=False
+  )
+  student = models.Foreignkey(
+    Student,
+    on_delete=models.CASCADE,
+    null=True
+  )

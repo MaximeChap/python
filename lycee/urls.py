@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . import views
-from .views import StudentCreateView
+from .views import StudentCreateView, StudentUpdateView
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -8,8 +8,5 @@ urlpatterns = [
     # /lycee/student/73
     url(r'^student/(?P<student_id>[0-9]+)$', views.detail_student, name='detail_student'),
     url(r'^student/create/$', StudentCreateView.as_view(), name='create_student'),
-
-
-
-    
+    url(r'^student/updatestudent/(?P<pk>\d+)$', StudentUpdateView.as_view(), name='update_student')    
 ]
