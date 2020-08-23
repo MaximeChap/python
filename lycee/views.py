@@ -50,7 +50,6 @@ def detail_callofroll(request,cursus_id):
     context = {'liste': result_list, 'liste_cursus' : result_cursus_list}
     return render (request, 'lycee/detail_callofroll.html' , context)
 
-
 class StudentCreateView(CreateView):
   # ref au modEle
   model = Student
@@ -82,9 +81,9 @@ class CallofrollCreateView(CreateView):
   # le nom du render
   template_name = "lycee/create_callofroll.html"
 
-  # page appelEe si creation ok
+  # page si creation ok
   def get_success_url(self):
-    return reverse ("detail_student", args=(self.object.pk,))
+    return reverse ("index", args=(self.object.pk,))
 
 
 
