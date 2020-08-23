@@ -76,21 +76,21 @@ class Student(models.Model):
     return self.email
 
 class Presence(models.Model):
-  date_missing = models.DateField(
-    verbose_name='date of call',
-    blank=False,
-    null=False
+	reason = models.CharField(
+				max_length=255,
+				blank=False,
+				null=False
   )
-  isMissing = models.BooleanField(
-    default=False
+	date_missing = models.DateField(
+				verbose_name='date of call',
+				blank=False,
+				null=False
   )
-  reason = models.CharField(
-    max_lenght=100,
-    blank=False,
-    null=False
-  )
-  student = models.Foreignkey(
-    Student,
-    on_delete=models.CASCADE,
-    null=True
+	isMissing = models.BooleanField(
+				default=False
+	)
+	student = models.ForeignKey(
+				Student,
+				on_delete=models.CASCADE, 
+				null=True
   )
