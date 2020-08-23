@@ -1,5 +1,5 @@
 from django.forms.models import ModelForm
-from .models import Student
+from .models import Student, Presence
 
 class StudentForm(ModelForm):
 
@@ -16,4 +16,16 @@ class StudentForm(ModelForm):
       "phone",
       "comments",
       "cursus",
+    )
+
+class CallOfRollForm(ModelForm):
+
+  class Meta:
+    model = Presence
+    
+    fields  = (
+      "date_missing",
+      "isMissing",
+      "reason",
+      "student",
     )

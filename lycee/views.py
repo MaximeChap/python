@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-from .models import Cursus,Student
-from .form import StudentForm
+from .models import Cursus,Student,Presence
+from .form import StudentForm,CallOfRollForm
 from django.views.generic import CreateView, UpdateView
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
@@ -74,17 +74,17 @@ class StudentUpdateView(UpdateView):
     return reverse ("detail_student", args=(self.object.pk,))
 
 
-"""class CallofrollCreateView(CreateView):
+class CallofrollCreateView(CreateView):
   # ref au modEle
   model = Presence
   # ref au formulaire
-  form_class = StudentForm
+  form_class = CallOfRollForm
   # le nom du render
-  template_name = "lycee/student/create.html"
+  template_name = "lycee/create_callofroll.html"
 
   # page appelEe si creation ok
   def get_success_url(self):
-    return reverse ("detail_student", args=(self.object.pk,))"""
+    return reverse ("detail_student", args=(self.object.pk,))
 
 
 
