@@ -7,24 +7,39 @@
         <h3>{{liste_cursus.name}} {{liste_cursus.scholar_year}}</h3>
         
     {% endblock %}
-
+    
     {% block content %}
-    <input type="date" id="start" name="trip-start" 
-    value="dd-mm-yyyy"min="2018-01-01" max="2022-12-31">
-
-               {% for student in liste %}
+      <table>
+          <tr>
+            <td>
+              <input type="date" id="start" name="trip-start" 
+              value="dd-mm-yyyy"min="2018-01-01" max="2022-12-31">
+            </td>
+          </tr>
+          
+      {% for student in liste %}
         
           <tr>
             <td>
-              
-                <a href="/lycee/student/{{student.id}}">{{student.first_name }} {{student.last_name}}</a></li>
-          
+              <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">{{student.first_name }} {{student.last_name}}</label>
+              </div>
             </td>
           </tr>   
           
           
         {% endfor %}
+          <tr>
+            <td>
+            <div class="boutons">
+            <button class="button radius alert left" type="cancel"><a href="/lycee/">Cancel</a></button></td>
+            
+            <td>
+            <button class="button radius success right" type="submit">Submit</button></td></tr>
+            </div>  
 
+      </table>
       
      {% endblock %}
 
