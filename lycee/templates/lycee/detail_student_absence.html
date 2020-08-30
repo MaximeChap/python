@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+
+{% if liste %}
+    {% block title %}
+        <h3>Absence student</h3>
+    {% endblock %}
+
+    {% block content %}
+    <table>
+      <tr>
+        <td>
+            <h3>{{liste.first_name }} {{liste.last_name}}</h3>
+            
+            {% for student in liste %}
+              <tr>
+                <td>
+                  <ul>
+                    {{liste.date_missing}}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    {{liste.reason}}
+                  </ul>
+                </td>
+              </tr>
+          {% endfor %}
+        </td> 
+      </tr>
+    </table>
+    {% endblock %}
+{% else %}
+     <p>No student to show.</p>
+{% endif %}
